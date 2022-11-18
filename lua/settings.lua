@@ -1,4 +1,5 @@
 local o = vim.o
+local opt = vim.opt
 
 
 -- Number of screen lines to keep above and below the cursor
@@ -13,8 +14,11 @@ o.shiftwidth = 4
 o.expandtab = true
 o.autoindent = true
 
+-- set termguicolors to enable highlight groups
+opt.termguicolors = true
+
 -- configure cursor
-vim.opt.guicursor = {
+opt.guicursor = {
     "n-v:block",
     "i-c-ci-ve:ver25",
     "r-cr:hor20",

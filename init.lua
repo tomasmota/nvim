@@ -9,9 +9,7 @@ vim.cmd("colorscheme nightfox")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- set termguicolors to enable highlight groups
-vim.opt.termguicolors = true
-
+-- nvim-tree setup
 -- empty setup using defaults
 require("nvim-tree").setup()
 
@@ -23,6 +21,7 @@ require("nvim-tree").setup({
     mappings = {
       list = {
         { key = "u", action = "dir_up" },
+        { key = " ", action = "edit" },
       },
     },
   },
