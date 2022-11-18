@@ -5,3 +5,6 @@ end
 -- Mimic shell movements
 map('i', '<C-E>', '<ESC>A')
 map('i', '<C-A>', '<ESC>I')
+
+-- Set leader to space
+vim.g.mapleader = "<Space>"
