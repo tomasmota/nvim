@@ -26,10 +26,49 @@ opt.guicursor = {
     "sm:block-blinkwait175-blinkoff150-blinkon175",
 }
 
-local configs = require'nvim-treesitter.configs'
+local configs = require('nvim-treesitter.configs')
 configs.setup {
-  ensure_installed = "go",
-  highlight = {
-    enable = true,
-  }
+    ensure_installed = "go",
+    highlight = {
+        enable = true,
+    },
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = "gnn",
+            node_incremental = "grn",
+            scope_incremental = "grc",
+            node_decremental = "grm",
+        },
+    },
 }
+
+-- telescope setup --
+local telescope = require('telescope')
+telescope.load_extension('fzf')
+telescope.setup{
+    defaults = {
+        prompt_prefix = "$ "
+    }
+}
+
+-- OR setup with some options
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  view = {
+    adaptive_size = true,
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+        { key = " ", action = "edit" },
+      },
+    },
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
+
