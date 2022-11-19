@@ -1,7 +1,6 @@
 local o = vim.o
 local opt = vim.opt
 
-
 -- Number of screen lines to keep above and below the cursor
 o.scrolloff = 8
     
@@ -25,4 +24,12 @@ opt.guicursor = {
     "o:hor50",
     "i:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor",
     "sm:block-blinkwait175-blinkoff150-blinkon175",
+}
+
+local configs = require'nvim-treesitter.configs'
+configs.setup {
+  ensure_installed = "go",
+  highlight = {
+    enable = true,
+  }
 }

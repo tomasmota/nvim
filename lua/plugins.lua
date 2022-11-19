@@ -21,5 +21,14 @@ return require('packer').startup(function(use)
       tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
 
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+    -- requires https://github.com/BurntSushi/ripgrep
+    -- requires https://github.com/sharkdp/fd
+    use {
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
 end)
 

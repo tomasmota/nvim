@@ -32,3 +32,6 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
+
+-- telescope setup
+require('telescope').load_extension('fzf')

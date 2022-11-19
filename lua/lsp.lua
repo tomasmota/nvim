@@ -1,8 +1,15 @@
+local function map_key(m, k, v)
+    vim.keymap.set(m, k, v, { noremap = true, silent = true })
+end
+
 require'lspconfig'.gopls.setup{
     on_attach = function()
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
-        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer=0})
+        map_key("n", "K", vim.lsp.buf.hover)
+        map_key("n", "gd", vim.lsp.buf.definition)
+        map_key("n", "gD", vim.lsp.buf.declaration)
+        map_key("n", "gi", vim.lsp.buf.implementation)
+        map_key("n", "gr", vim.lsp.buf.references)
+        map_key("n", "<leader>r", vim.lsp.buf.rename)
 
         -- go.nvim setup
         vim.api.nvim_create_autocmd("BufWritePre", {
