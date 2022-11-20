@@ -46,11 +46,8 @@ configs.setup {
 -- telescope setup --
 local telescope = require('telescope')
 telescope.load_extension('fzf')
-telescope.setup{
-    defaults = {
-        prompt_prefix = "$ "
-    }
-}
+telescope.load_extension('file_browser')
+telescope.setup()
 
 -- OR setup with some options
 require("nvim-tree").setup({
