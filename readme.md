@@ -1,8 +1,8 @@
 ## Neovim configuration
 
 ### Todo's
-- setup treesitter binds
+- setup treesitter binds (like "yank around function")
 - configure telescope keybinds
-- setup autocompletion
 - setup Comment.nvim: https://github.com/numToStr/Comment.nvim
 - configure go snippets for luasnip
+- setup git workflow
