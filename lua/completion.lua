@@ -1,7 +1,6 @@
 local cmp = require'cmp'
 cmp.setup({
     snippet = {
-      -- REQUIRED - you must specify a snippet engine
       expand = function(args)
         require('luasnip').lsp_expand(args.body)
       end,
@@ -26,7 +25,8 @@ cmp.setup({
 cmp.setup.cmdline({ '/', '?' }, {
 mapping = cmp.mapping.preset.cmdline(),
     sources = {
-      { name = 'buffer' }
+      { name = 'buffer' },
+      { name = 'nvim_lsp_document_symbol' }
     }
 })
 
@@ -61,5 +61,18 @@ cmp.setup {
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig')['gopls'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    settings = {
+        gopls = {
+            experimentalPostfixCompletions = true,
+            analyses = {
+                unusedparams = true,
+                shadow = true,
+            },
+            staticcheck = true,
+        },
+    },
+    init_options = {
+        usePlaceholders = true,
+    }
 }
