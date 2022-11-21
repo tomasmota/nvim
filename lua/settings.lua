@@ -88,3 +88,10 @@ vim.keymap.set("i", "<C-l>", function()
 		ls.change_choice(1)
 	end
 end)
+
+require('Comment').setup()
+require('git').setup()
+require('nvim-autopairs').setup()
+require('luasnip').filetype_extend("go", { "go" })
+require('lsp_signature').setup()
+

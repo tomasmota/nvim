@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
       tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
 
+    -- Telescope
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     -- requires https://github.com/BurntSushi/ripgrep
@@ -33,6 +34,7 @@ return require('packer').startup(function(use)
 
     use 'nvim-telescope/telescope-file-browser.nvim'
 
+    -- Completion
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
@@ -41,6 +43,15 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
     use 'onsails/lspkind.nvim'
+    use 'windwp/nvim-autopairs'
+    use 'rafamadriz/friendly-snippets'
+    use 'ray-x/lsp_signature.nvim'
+
+    -- Comments
+    use 'numToStr/Comment.nvim'
+
+    -- Git
+    use 'dinhhuy258/git.nvim'
 
 end)
 

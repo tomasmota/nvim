@@ -1,5 +1,3 @@
-vim.o.completeopt="menuone,noinsert,noselect"
-
 local cmp = require'cmp'
 cmp.setup({
     snippet = {
@@ -19,13 +17,9 @@ cmp.setup({
       ['<C-e>'] = cmp.mapping.abort(),
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
-    sources = cmp.config.sources({
-      { name = 'nvim_lsp' },
-      { name = 'path' },
-      { name = 'luasnip' },
-    }, {
-      { name = 'buffer', keyword_length = 5},
-    })
+    sources = { { name = 'nvim_lsp' }, { name = 'luasnip' }, { name = 'buffer', keyword_length = 5} },
+    completion = { completeopt = "menu,menuone,noinsert" },
+    experimentsl = { ghost_text = true },
 })
 
 -- Use buffer source for `/` and `?`
