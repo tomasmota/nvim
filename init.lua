@@ -1,8 +1,8 @@
 require('plugins')
 require('settings')
 require('keybinds')
-require('lsp')
 require('completion')
+require('lsp')
 
 vim.cmd("colorscheme nightfox")
 

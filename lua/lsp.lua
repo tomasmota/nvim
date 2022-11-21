@@ -3,6 +3,7 @@ local function map_key(m, k, v)
 end
 
 require'lspconfig'.gopls.setup{
+
     on_attach = function()
         map_key("n", "K", vim.lsp.buf.hover)
         map_key("n", "gd", vim.lsp.buf.definition)

@@ -2,6 +2,8 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    use 'ray-x/go.nvim'
+
     use 'neovim/nvim-lspconfig'
 
     use {
@@ -9,8 +11,6 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     }
     use 'nvim-treesitter/nvim-treesitter-context'
-
-    use 'ray-x/go.nvim'
 
 	use "EdenEast/nightfox.nvim"
 
