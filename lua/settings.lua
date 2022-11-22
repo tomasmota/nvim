@@ -90,4 +90,4 @@ require('git').setup()
 require('nvim-autopairs').setup()
 require('luasnip').filetype_extend("go", { "go" })
 require('lsp_signature').setup()
-
+require('auto-save').setup()

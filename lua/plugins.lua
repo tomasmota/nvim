@@ -14,7 +14,9 @@ return require('packer').startup(function(use)
     }
     use 'nvim-treesitter/nvim-treesitter-context'
 
-	use "EdenEast/nightfox.nvim"
+	use 'EdenEast/nightfox.nvim'
+    
+    use 'Pocco81/auto-save.nvim'
 
     -- Telescope
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
