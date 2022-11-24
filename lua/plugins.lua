@@ -55,5 +55,7 @@ return require('packer').startup(function(use)
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
+    -- vim-visual-multi (multi cursor support)
+    use { 'mg979/vim-visual-multi', branch = 'master'}
 end)
 
