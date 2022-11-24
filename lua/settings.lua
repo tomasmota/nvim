@@ -26,6 +26,9 @@ opt.guicursor = {
     "sm:block-blinkwait175-blinkoff150-blinkon175",
 }
 
+-- use system clipboard
+-- vim.api.nvim_set_option("clipboard","unnamedplus")
+
 local configs = require('nvim-treesitter.configs')
 configs.setup {
     ensure_installed = "go",
@@ -65,29 +68,9 @@ telescope.setup({
       },
   })
 
--- Keymaps for Luasnip
-local ls = require("luasnip")
-vim.keymap.set({ "i", "s" }, "<C-k>", function()
-	if ls.expand_or_jumpable() then
-		ls.expand_or_jump()
-	end
-end, { silent = true })
-
-vim.keymap.set({ "i", "s" }, "<C-j>", function()
-	if ls.jumpable(-1) then
-		ls.jump(-1)
-	end
-end, { silent = true })
-
-vim.keymap.set("i", "<C-l>", function()
-	if ls.choice_active() then
-		ls.change_choice(1)
-	end
-end)
-
 require('Comment').setup()
 require('git').setup()
 require('nvim-autopairs').setup()
 require('luasnip').filetype_extend("go", { "go" })
 require('lsp_signature').setup()
-require('auto-save').setup()
+require('lualine').setup()

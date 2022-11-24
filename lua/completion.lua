@@ -1,13 +1,14 @@
+local ls = require("luasnip")
 local cmp = require'cmp'
 cmp.setup({
     snippet = {
       expand = function(args)
-        require('luasnip').lsp_expand(args.body)
+        ls.lsp_expand(args.body)
       end,
     },
     window = {
-      -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -74,6 +75,19 @@ require('lspconfig')['gopls'].setup {
     },
     init_options = {
         usePlaceholders = true,
+    }
+}
+
+require('lspconfig').yamlls.setup{
+    on_attach=on_attach,
+    capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+    settings = {
+        yaml = {
+            schemas = {
+                ["https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/static/jsonschema/kedro-catalog-0.17.json"]= "conf/**/*catalog*",
+                ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
+            }
+        }
     }
 }
 

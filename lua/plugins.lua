@@ -16,7 +16,6 @@ return require('packer').startup(function(use)
 
 	use 'EdenEast/nightfox.nvim'
     
-    use 'Pocco81/auto-save.nvim'
 
     -- Telescope
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
@@ -49,6 +48,12 @@ return require('packer').startup(function(use)
 
     -- Git
     use 'dinhhuy258/git.nvim'
+
+    -- lualine
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
 end)
 
