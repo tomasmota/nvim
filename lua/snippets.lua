@@ -35,6 +35,15 @@ ls.add_snippets("go", {
             i(3, 'int'),
         }
     )),
+    s("ie", {
+        
+    }),
+})
+
+ls.add_snippets("hcl", {
+	s("todo", {
+		t("# TODO: "),
+	}),
 })
 
 

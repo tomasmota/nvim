@@ -91,6 +91,8 @@ require('lspconfig').yamlls.setup{
     }
 }
 
+require'lspconfig'.terraformls.setup{}
+
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local cmp = require('cmp')
 cmp.event:on(
