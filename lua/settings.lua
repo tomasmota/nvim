@@ -56,6 +56,7 @@ configs.setup {
 local telescope = require('telescope')
 telescope.load_extension('fzf')
 telescope.load_extension('file_browser')
+telescope.load_extension('repo')
 telescope.setup({
     defaults = {
         mappings = {
@@ -88,6 +89,7 @@ augroup TelescopeOnEnter
     autocmd VimEnter * lua open_telescope()
 augroup END
 ]], false)
+
 
 require('Comment').setup()
 require('git').setup()

@@ -16,7 +16,6 @@ return require('packer').startup(function(use)
 
 	use 'EdenEast/nightfox.nvim'
     
-
     -- Telescope
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
@@ -28,6 +27,7 @@ return require('packer').startup(function(use)
     }
 
     use 'nvim-telescope/telescope-file-browser.nvim'
+    use 'cljoly/telescope-repo.nvim'
 
     -- Completion
     use 'hrsh7th/cmp-nvim-lsp'
@@ -54,8 +54,5 @@ return require('packer').startup(function(use)
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
-
-    -- vim-visual-multi (multi cursor support)
-    use { 'mg979/vim-visual-multi', branch = 'master'}
 end)
 

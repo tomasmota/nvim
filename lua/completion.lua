@@ -91,7 +91,12 @@ require('lspconfig').yamlls.setup{
     }
 }
 
-require'lspconfig'.terraformls.setup{}
+require'lspconfig'.terraformls.setup{
+    capabilities = capabilities,
+}
+require'lspconfig'.luau_lsp.setup{
+    capabilities = capabilities,
+}
 
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local cmp = require('cmp')
