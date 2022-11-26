@@ -26,8 +26,14 @@ opt.guicursor = {
     "sm:block-blinkwait175-blinkoff150-blinkon175",
 }
 
--- use system clipboard
--- vim.api.nvim_set_option("clipboard","unnamedplus")
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = vim.api.nvim_create_augroup('highlight_yank', {}),
+  desc = 'Hightlight selection on yank',
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank { higroup = 'IncSearch', timeout = 30 }
+  end,
+})
 
 local configs = require('nvim-treesitter.configs')
 configs.setup {
