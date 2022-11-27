@@ -1,4 +1,4 @@
-local apabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
 
 lspconfig.gopls.setup {
@@ -30,7 +30,6 @@ lspconfig.gopls.setup {
 }
 
 lspconfig.yamlls.setup{
-    on_attach=on_attach,
     capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
     settings = {
     capabilities = capabilities,
@@ -53,6 +52,7 @@ lspconfig.terraformls.setup{
     end,
 }
 
+-- language server configured according to this: https://terminalroot.com/how-to-install-lua-lsp-on-neovim/
 lspconfig.sumneko_lua.setup{
     settings = {
         Lua = {
