@@ -8,7 +8,7 @@ end
 -- Save with <leader>
 noremap('n', '<leader>s', ':w<CR>')
 
--- - Mimic shell movements
+-- Mimic shell movements
 noremap('i', '<C-E>', '<ESC>A')
 noremap('i', '<C-A>', '<ESC>I')
 noremap("n", "C-r", ":luafile %<CR>", { noremap = true })

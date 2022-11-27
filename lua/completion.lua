@@ -60,8 +60,9 @@ cmp.setup {
 }
 
 -- Set up lspconfig.
+local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require('lspconfig')['gopls'].setup {
+lspconfig['gopls'].setup {
     capabilities = capabilities,
     settings = {
         gopls = {
@@ -78,7 +79,7 @@ require('lspconfig')['gopls'].setup {
     }
 }
 
-require('lspconfig').yamlls.setup{
+lspconfig.yamlls.setup{
     on_attach=on_attach,
     capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
     settings = {
@@ -91,15 +92,14 @@ require('lspconfig').yamlls.setup{
     }
 }
 
-require'lspconfig'.terraformls.setup{
+lspconfig.terraformls.setup{
     capabilities = capabilities,
 }
-require'lspconfig'.luau_lsp.setup{
+lspconfig.luau_lsp.setup{
     capabilities = capabilities,
 }
 
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-local cmp = require('cmp')
 cmp.event:on(
   'confirm_done',
   cmp_autopairs.on_confirm_done()

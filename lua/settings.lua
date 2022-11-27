@@ -26,6 +26,8 @@ opt.guicursor = {
     "sm:block-blinkwait175-blinkoff150-blinkon175",
 }
 
+opt.clipboard = "unnamedplus"
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('highlight_yank', {}),
   desc = 'Hightlight selection on yank',
@@ -89,7 +91,6 @@ augroup TelescopeOnEnter
     autocmd VimEnter * lua open_telescope()
 augroup END
 ]], false)
-
 
 require('Comment').setup()
 require('git').setup()
