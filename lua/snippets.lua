@@ -36,7 +36,6 @@ ls.add_snippets("go", {
         }
     )),
     s("ie", {
-        
     }),
 })
 

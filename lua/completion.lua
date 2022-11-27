@@ -59,46 +59,6 @@ cmp.setup {
   }
 }
 
--- Set up lspconfig.
-local lspconfig = require('lspconfig')
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-lspconfig['gopls'].setup {
-    capabilities = capabilities,
-    settings = {
-        gopls = {
-            experimentalPostfixCompletions = true,
-            analyses = {
-                unusedparams = true,
-                shadow = true,
-            },
-            staticcheck = true,
-        },
-    },
-    init_options = {
-        usePlaceholders = true,
-    }
-}
-
-lspconfig.yamlls.setup{
-    on_attach=on_attach,
-    capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
-    settings = {
-        yaml = {
-            schemas = {
-                ["https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/static/jsonschema/kedro-catalog-0.17.json"]= "conf/**/*catalog*",
-                ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
-            }
-        }
-    }
-}
-
-lspconfig.terraformls.setup{
-    capabilities = capabilities,
-}
-lspconfig.luau_lsp.setup{
-    capabilities = capabilities,
-}
-
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on(
   'confirm_done',

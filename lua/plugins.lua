@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
 
     -- Themes
 	use 'EdenEast/nightfox.nvim'
-    
+
     -- Telescope
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
