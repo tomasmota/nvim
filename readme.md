@@ -9,4 +9,6 @@
 - fd
 - locate
 - g++
+- ripgrep
+
 

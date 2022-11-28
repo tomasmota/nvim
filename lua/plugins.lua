@@ -1,5 +1,4 @@
 return require('packer').startup(function(use)
-    -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
     use 'ray-x/go.nvim'
@@ -21,14 +20,22 @@ return require('packer').startup(function(use)
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     -- requires https://github.com/BurntSushi/ripgrep
-    -- requires https://github.com/sharkdp/fd
+    -- requires https://github.com/sharkdp/fd (sudo apt install fd-find)
     use {
         'nvim-telescope/telescope.nvim', branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
     use 'nvim-telescope/telescope-file-browser.nvim'
+    -- requires locate (sudo apt install locate)
     use 'cljoly/telescope-repo.nvim'
+    use {
+      "folke/todo-comments.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = function()
+        require("todo-comments").setup {}
+      end
+    }
 
     -- Completion
     use 'hrsh7th/cmp-nvim-lsp'

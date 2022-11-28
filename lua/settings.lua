@@ -3,7 +3,7 @@ local opt = vim.opt
 
 -- Number of screen lines to keep above and below the cursor
 o.scrolloff = 8
-    
+
 o.relativenumber = true
 o.number = true
 o.expandtab = true
@@ -12,6 +12,7 @@ o.softtabstop = 4
 o.shiftwidth = 4
 o.expandtab = true
 o.autoindent = true
+o.undofile = true
 
 -- set termguicolors to enable highlight groups
 opt.termguicolors = true
@@ -26,8 +27,9 @@ opt.guicursor = {
     "sm:block-blinkwait175-blinkoff150-blinkon175",
 }
 
+-- Use system clipboard: https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
+-- Install win32yank.exe, put this in, and nothing else
 opt.clipboard = "unnamedplus"
-
 vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('highlight_yank', {}),
   desc = 'Hightlight selection on yank',
@@ -60,6 +62,7 @@ telescope.load_extension('fzf')
 telescope.load_extension('file_browser')
 telescope.load_extension('repo')
 telescope.setup({
+    winblend = 10,
     defaults = {
         mappings = {
             i = {
