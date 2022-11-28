@@ -42,6 +42,7 @@ lspconfig.yamlls.setup{
     }
 }
 
+-- https://github.com/hashicorp/terraform-ls
 lspconfig.terraformls.setup{
     capabilities = capabilities,
     on_attach = function()
@@ -49,8 +50,11 @@ lspconfig.terraformls.setup{
         vim.o.softtabstop = 2
         vim.o.shiftwidth = 2
         vim.o.expandtab = true
+        vim.keymap.set("n", "<leader>tf", "<cmd>!terraform fmt<cr>", { noremap = true })
     end,
 }
+-- https://github.com/terraform-linters/tflint#installation
+lspconfig.tflint.setup{}
 
 -- language server configured according to this: https://terminalroot.com/how-to-install-lua-lsp-on-neovim/
 lspconfig.sumneko_lua.setup{

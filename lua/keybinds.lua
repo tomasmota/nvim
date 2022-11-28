@@ -22,8 +22,6 @@ noremap('n', '<C-p>', builtin.find_files)
 noremap('n', '<leader>fa', builtin.live_grep) -- grep across all file in current directory
 noremap('n', '<leader>fk', builtin.keymaps)
 noremap('n', '<leader>fs', builtin.lsp_document_symbols)
--- noremap('n', '<leader>fb', require('telescope').extensions.file_browser.file_browser)
-
 noremap('n', '<leader>fb',function()
     require("telescope").extensions.file_browser.file_browser(
       require("telescope.themes").get_ivy({
@@ -33,7 +31,6 @@ noremap('n', '<leader>fb',function()
       })
     )
   end)
-
 noremap('n', '<leader>fr', require('telescope').extensions.repo.repo)
 noremap("n", "<leader>le", "<cmd>Telescope diagnostics<cr>")
 noremap('n', '<leader>h', builtin.help_tags) -- grep help docs
