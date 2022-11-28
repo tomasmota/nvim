@@ -66,3 +66,6 @@ lspconfig.sumneko_lua.setup{
         }
     }
 }
+
+-- markdown
+lspconfig.marksman.setup{}

@@ -20,7 +20,7 @@ noremap("n", "C-r", ":luafile %<CR>")
 
 -- Telescope stuff
 local builtin = require('telescope.builtin')
-noremap('n', '<C-p>', builtin.find_files)
+noremap('n', '<leader>p', builtin.find_files)
 noremap('n', '<leader>fa', builtin.live_grep) -- grep across all file in current directory
 noremap('n', '<leader>fk', builtin.keymaps)
 noremap('n', '<leader>fs', builtin.lsp_document_symbols)
@@ -37,6 +37,7 @@ noremap('n', '<leader>fb',function()
 end)
 noremap('n', '<leader>fr', require('telescope').extensions.repo.repo)
 noremap("n", "<leader>le", "<cmd>Telescope diagnostics<cr>")
+noremap("n", "<leader>v", "<cmd>Telescope neoclip<cr>")
 noremap('n', '<leader>h', builtin.help_tags) -- grep help docs
 noremap('n', '<leader>gs', builtin.git_status)
 noremap('n', '<C-f>', builtin.current_buffer_fuzzy_find)
