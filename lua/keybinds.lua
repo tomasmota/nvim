@@ -9,6 +9,8 @@ end
 noremap('n', '<leader>s', ':w<CR>')
 -- Quit with <leader>
 noremap('n', '<leader>q', ':q<CR>')
+-- Clear highlighted search
+noremap('n', '<C-l>', ':nohlsearch<CR>')
 
 -- Mimic shell movements
 noremap('i', '<C-E>', '<ESC>A')
@@ -23,14 +25,16 @@ noremap('n', '<leader>fa', builtin.live_grep) -- grep across all file in current
 noremap('n', '<leader>fk', builtin.keymaps)
 noremap('n', '<leader>fs', builtin.lsp_document_symbols)
 noremap('n', '<leader>fb',function()
-    require("telescope").extensions.file_browser.file_browser(
-      require("telescope.themes").get_ivy({
-        grouped = true,
-        files = false,
-        display_stat = false,
-      })
-    )
-  end)
+    require("telescope").extensions.file_browser.file_browser({
+        { cwd = '%:h' },
+        require("telescope.themes").get_ivy({
+            layout_config = { height = 0.7 },
+            grouped = true,
+            files = false,
+            display_stat = false,
+        })
+    })
+end)
 noremap('n', '<leader>fr', require('telescope').extensions.repo.repo)
 noremap("n", "<leader>le", "<cmd>Telescope diagnostics<cr>")
 noremap('n', '<leader>h', builtin.help_tags) -- grep help docs

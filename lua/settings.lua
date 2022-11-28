@@ -75,10 +75,11 @@ telescope.setup({
     },
     pickers = {
         find_files = {
-          theme = "ivy",
+            theme = "ivy",
+            layout_config = { height = 0.7 },
         }
-      },
-  })
+    },
+})
 
 -- Open Telescope find_files when opening nvim with a directory as first argument
 _G.open_telescope = function()
