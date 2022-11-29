@@ -76,4 +76,5 @@ require('lsp_signature').setup({
     handler_opts = {
       border = "rounded" -- double, single, shadow, none
     },
+    hi_parameter = "IncSearch"
 })

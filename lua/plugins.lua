@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     }
     use 'nvim-treesitter/nvim-treesitter-context'
+    use 'nvim-treesitter/nvim-treesitter-textobjects'
 
     -- Themes
 	use 'EdenEast/nightfox.nvim'
