@@ -69,3 +69,11 @@ lspconfig.sumneko_lua.setup{
 
 -- markdown
 lspconfig.marksman.setup{}
+
+-- nvim.lsp_signature setup
+require('lsp_signature').setup({
+    hint_prefix = "🌟 ", -- Panda for parameter
+    handler_opts = {
+      border = "rounded" -- double, single, shadow, none
+    },
+})
