@@ -96,11 +96,19 @@ telescope.setup({
         }
     },
     pickers = {
-        find_files = {
-            theme = "ivy",
-            layout_config = { height = 0.7 },
-        }
+        -- find_files = {
+        --     theme = "ivy",
+        --     layout_config = { height = 0.7 },
+        -- },
+        -- lsp_document_symbols = {
+        --     theme = "ivy",
+        --     layout_config = { height = 0.7 },
+        -- }
     },
+    layout_config = {
+        height = 0.9,
+        width = 0.9,
+    }
 })
 
 -- Open Telescope find_files when opening nvim with a directory as first argument
@@ -122,7 +130,16 @@ require('Comment').setup()
 require('git').setup()
 require('nvim-autopairs').setup()
 require('luasnip').filetype_extend("go", { "go" })
-require('lualine').setup()
+require('lualine').setup({
+    sections = {
+        lualine_c = {
+            {
+                'filename',
+                path = 1 -- 0 = just filename, 1 = relative path, 2 = absolute path
+            },
+        }
+    }
+})
 
 require'nvim-treesitter.configs'.setup {
 }

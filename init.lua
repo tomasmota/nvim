@@ -11,3 +11,7 @@ vim.cmd("colorscheme nightfox")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+P = function(v)
+    print(vim.inspect(v))
+    return v
+end
