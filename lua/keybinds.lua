@@ -12,11 +12,14 @@ noremap('n', '<leader>q', ':q<CR>')
 -- Clear highlighted search
 noremap('n', '<C-l>', ':nohlsearch<CR>')
 
+noremap('n', '<C-u>', '<C-u>zz')
+noremap('n', '<C-d>', '<C-d>zz')
+
 -- Mimic shell movements
 noremap('i', '<C-E>', '<ESC>A')
 noremap('i', '<C-A>', '<ESC>I')
-noremap("n", "C-r", ":luafile %<CR>")
 
+noremap("n", "C-r", ":luafile %<CR>")
 
 -- Telescope stuff
 local builtin = require('telescope.builtin')
@@ -52,7 +55,7 @@ noremap("n", "H", vim.lsp.buf.signature_help)
 noremap("n", "gd", vim.lsp.buf.definition)
 noremap("n", "gD", vim.lsp.buf.declaration)
 noremap("n", "gi", vim.lsp.buf.implementation)
-noremap("n", "gr", vim.lsp.buf.references)
+noremap("n", "gr", "<cmd>Telescope lsp_references<cr>")
 noremap("n", "<leader>r", vim.lsp.buf.rename)
 noremap("n", "<leader>e", vim.diagnostic.goto_next)
 noremap('n', '<C- >', ':lua vim.lsp.buf.code_action()<CR>')
