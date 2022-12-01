@@ -70,6 +70,8 @@ lspconfig.sumneko_lua.setup{
 -- markdown
 lspconfig.marksman.setup{}
 
+lspconfig.rust_analyzer.setup{}
+
 -- nvim.lsp_signature setup
 require('lsp_signature').setup({
     hint_prefix = "🌟 ", -- Panda for parameter
