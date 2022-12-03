@@ -1,4 +1,5 @@
 local o = vim.o
+
 local opt = vim.opt
 
 -- Number of screen lines to keep above and below the cursor
@@ -13,6 +14,7 @@ o.shiftwidth = 4
 o.expandtab = true
 o.autoindent = true
 o.undofile = true
+o.swapfile = false
 
 -- set termguicolors to enable highlight groups
 opt.termguicolors = true
