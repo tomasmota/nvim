@@ -70,7 +70,12 @@ lspconfig.sumneko_lua.setup{
 -- markdown
 lspconfig.marksman.setup{}
 
-lspconfig.rust_analyzer.setup{}
+lspconfig.rust_analyzer.setup{
+    vim.api.nvim_create_autocmd("BufWritePost", {
+        pattern = "*.rs",
+        command = "silent !cargo fmt"
+    })
+}
 
 -- nvim.lsp_signature setup
 require('lsp_signature').setup({

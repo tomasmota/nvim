@@ -46,8 +46,8 @@ noremap('n', '<leader>gs', builtin.git_status)
 noremap('n', '<C-f>', builtin.current_buffer_fuzzy_find)
 
 local ls = require("luasnip")
-noremap({ "i", "s" }, "<C-n>", ls.expand_or_jump)
-noremap({ "i", "s" }, "<C-p>", function() ls.jump(-1) end)
+noremap({ "i", "s" }, "<c-n>", ls.expand_or_jump)
+noremap({ "i", "s" }, "<c-p>", function() ls.jump(-1) end)
 
 -- lsp stuff
 noremap("n", "K", vim.lsp.buf.hover)
