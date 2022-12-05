@@ -52,7 +52,7 @@ noremap({ "i", "s" }, "<c-p>", function() ls.jump(-1) end)
 -- lsp stuff
 noremap("n", "K", vim.lsp.buf.hover)
 noremap("n", "H", vim.lsp.buf.signature_help)
-noremap("n", "gd", vim.lsp.buf.definition)
+noremap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>zz") -- TODO: change this to a function, using vim.api.nvim_win_set_cursor
 noremap("n", "gp", function() builtin.lsp_definitions({jump_type = "never"}) end)
 noremap("n", "gi", vim.lsp.buf.implementation)
 noremap("n", "gr", builtin.lsp_references)
