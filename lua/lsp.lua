@@ -79,7 +79,7 @@ lspconfig.rust_analyzer.setup{
 
 -- nvim.lsp_signature setup
 require('lsp_signature').setup({
-    hint_prefix = "🌟 ", -- Panda for parameter
+    hint_prefix = "🌟 ",
     handler_opts = {
       border = "rounded" -- double, single, shadow, none
     },
