@@ -1,0 +1,6 @@
+require("tomasmota.plugins")
+require("tomasmota.completion")
+require("tomasmota.keybinds")
+require("tomasmota.lsp")
+require("tomasmota.settings")
+require("tomasmota.snippets")
