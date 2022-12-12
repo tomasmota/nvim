@@ -48,21 +48,35 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
     use 'onsails/lspkind.nvim'
-    use 'windwp/nvim-autopairs'
     use 'rafamadriz/friendly-snippets'
     use 'ray-x/lsp_signature.nvim'
+    use {
+        'windwp/nvim-autopairs',
+        require('nvim-autopairs').setup()
+    }
 
     -- Comments
-    use 'numToStr/Comment.nvim'
-
-    -- Git
-    use 'dinhhuy258/git.nvim'
+    use {
+        'numToStr/Comment.nvim',
+        require('Comment').setup()
+    }
 
     -- lualine
     use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        'nvim-lualine/lualine.nvim',
+        require('lualine').setup({
+            sections = {
+                lualine_c = {
+                    {
+                        'filename',
+                        path = 1 -- 0 = just filename, 1 = relative path, 2 = absolute path
+                    },
+                }
+            }
+        }),
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+
 
     use {
       "AckslD/nvim-neoclip.lua",

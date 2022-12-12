@@ -1,5 +1,7 @@
 local ls = require("luasnip")
 
+ls.filetype_extend("go", { "go" })
+
 -- some shorthands...
 local snippet_from_nodes = ls.sn
 local s = ls.snippet
