@@ -19,14 +19,14 @@ cmp.setup({
     }),
     sources = { { name = 'nvim_lsp' }, { name = 'luasnip' }, { name = 'buffer', keyword_length = 5} },
     completion = { completeopt = "menu,menuone,noinsert" },
-    experimentsl = { ghost_text = true },
+    experimental = { ghost_text = true },
 })
 
 -- Use buffer source for `/` and `?`
 cmp.setup.cmdline({ '/', '?' }, {
 mapping = cmp.mapping.preset.cmdline(),
     sources = {
-      { name = 'nvim_lsp_document_symbol' }
+      { name = 'nvim_lsp_document_symbol', keyword_length = 5 }
     }
 })
 
@@ -34,9 +34,10 @@ mapping = cmp.mapping.preset.cmdline(),
 cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-      { name = 'path' }
-    }, {
-      { name = 'cmdline' }
+        { name = 'path' }
+    },
+    {
+        { name = 'cmdline' }
     })
 })
 
@@ -63,5 +64,3 @@ cmp.event:on(
   'confirm_done',
   cmp_autopairs.on_confirm_done()
 )
-
-require("luasnip.loaders.from_vscode").lazy_load()
