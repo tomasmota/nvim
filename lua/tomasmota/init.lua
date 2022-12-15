@@ -2,6 +2,7 @@ require("tomasmota.settings")
 require("tomasmota.plugins")
 require("tomasmota.completion")
 require("tomasmota.keybinds")
+require("tomasmota.lsp")
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('highlight_yank', {}),
