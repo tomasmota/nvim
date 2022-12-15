@@ -3,7 +3,6 @@ local telescope = require('telescope')
 telescope.load_extension('fzf')
 telescope.load_extension('file_browser')
 telescope.load_extension('repo')
-telescope.load_extension('neoclip')
 telescope.setup({
     winblend = 10,
     defaults = {
@@ -47,5 +46,3 @@ augroup TelescopeOnEnter
 augroup END
 ]], false)
 
-require('Comment').setup()
-require('luasnip').filetype_extend("go", { "go" })

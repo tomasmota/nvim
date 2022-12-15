@@ -36,7 +36,6 @@ vim.keymap.set('n', '<leader>fb',function()
 end)
 vim.keymap.set('n', '<leader>fr', require('telescope').extensions.repo.repo)
 vim.keymap.set("n", "<leader>le", "<cmd>Telescope diagnostics<cr>")
-vim.keymap.set("n", "<leader>v", "<cmd>Telescope neoclip<cr>")
 vim.keymap.set('n', '<leader>h', builtin.help_tags) -- grep help docs
 vim.keymap.set('n', '<leader>gs', builtin.git_status)
 vim.keymap.set('n', '<C-f>', builtin.current_buffer_fuzzy_find)
