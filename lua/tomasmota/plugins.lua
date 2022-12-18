@@ -52,19 +52,25 @@ return require('packer').startup(function(use)
     use 'ray-x/lsp_signature.nvim'
     use {
         'windwp/nvim-autopairs',
+      config = function()
         require('nvim-autopairs').setup()
+      end
     }
 
     -- Comments
     use {
         'numToStr/Comment.nvim',
+      config = function()
         require('Comment').setup()
+      end
     }
 
     -- lualine
     use {
         'nvim-lualine/lualine.nvim',
-        require('lualine').setup({
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        config = function()
+          require('lualine').setup({
             sections = {
                 lualine_c = {
                     {
@@ -73,8 +79,8 @@ return require('packer').startup(function(use)
                     },
                 }
             }
-        }),
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        })
+        end
     }
 
     use {

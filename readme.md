@@ -4,7 +4,7 @@
 - setup git workflow
 
 ### Dependencies
-- fd
+- fd (fd-find)
 - locate
 - g++
 - ripgrep

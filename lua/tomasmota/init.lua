@@ -1,5 +1,5 @@
-require("tomasmota.settings")
 require("tomasmota.plugins")
+require("tomasmota.settings")
 require("tomasmota.completion")
 require("tomasmota.keybinds")
 require("tomasmota.lsp")
